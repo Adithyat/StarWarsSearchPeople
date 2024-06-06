@@ -1,0 +1,38 @@
+# Node.js dependencies
+/node_modules
+
+# Build output
+/dist
+
+# TypeScript cache
+*.tsbuildinfo
+
+# Environment variables
+.env
+
+# Logs
+*.log
+
+# IDE-specific files
+.vscode
+.idea
+*.swp
+
+# Docker
+docker-compose.override.yml
+.dockerignore
+
+# Optional npm cache directory
+.npm
+
+# TypeScript
+*.d.ts
+**/*.js
+**/*.js.map
+**/*.d.ts
+**/*.d.ts.map
+
+# Optional lock files
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
