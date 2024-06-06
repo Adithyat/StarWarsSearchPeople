@@ -15,9 +15,11 @@ A console application to search star wars characters built with TypeScript.
 
 To get started, clone the repository and install the dependencies:
 - docker run -p 3000:3000 clonardo/socketio-backend
-- git clone https://github.com/yourusername/your-repo.git
+- git clone https://github.com/Adithyat/StarWarsSearchPeople.git
 - cd your-repo
 - npm install
+*If using a different URL for backend setup a .env file at root of app with the following contents:
+SOCKET_URL= <API_URL>
 
 ## Usage
 To run the application, use the following command:
