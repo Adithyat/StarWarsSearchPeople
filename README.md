@@ -12,6 +12,7 @@ A console application to search star wars characters built with TypeScript.
 - [License](#license)
 
 ## Installation
+Please be sure to have at least Node v20.14.0 installed 
 
 To get started, clone the repository and install the dependencies:
 - docker run -p 3000:3000 clonardo/socketio-backend
