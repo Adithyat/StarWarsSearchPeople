@@ -8,7 +8,7 @@ import {initializeProcessHandlers} from "./processes";
 // Program startup file
 export const logger = createLogger();
 export const socket = io(process.env.SOCKET_URL || 'http://localhost:3000');
-export const rl = readline.createInterface({
+export const readlineInterface = readline.createInterface({
     input: process.stdin,
     output: process.stdout
 });

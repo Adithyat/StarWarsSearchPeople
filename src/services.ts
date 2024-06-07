@@ -1,11 +1,11 @@
-import {logger, rl, socket} from "./app";
+import {logger, readlineInterface, socket} from "./app";
 import {SearchPeopleRequest} from "./models";
 import {searchPeopleSchema} from "./validators";
 
 // Controller
 // Function to ask for search query
 export const searchPeople = () => {
-    rl.question('What character would you like to search for? ', (input: string) => {
+    readlineInterface.question('What character would you like to search for? ', (input: string) => {
         //Deserialize request
         const request: SearchPeopleRequest = {
             query: input

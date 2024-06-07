@@ -1,9 +1,9 @@
-import {logger, rl, socket} from "./app";
+import {logger, readlineInterface, socket} from "./app";
 
 // Function to handle graceful shutdown
 const shutdown = () => {
     console.log('\nShutting down...');
-    rl.close();
+    readlineInterface.close();
     socket.disconnect();
     process.exit(0);
 };
