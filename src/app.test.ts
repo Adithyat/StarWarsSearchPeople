@@ -1,22 +1,24 @@
-import * as readline from 'readline';
+
 import { io } from 'socket.io-client';
-import { createLogger } from '../src/logger';
-import { initializeSocket } from '../src/sockets';
-import { initializeProcessHandlers } from '../src/processes';
-import { logger, socket, readlineInterface } from '../src/app';
+import { createLogger } from './logger';
+import { initializeSocket } from './sockets';
+import { initializeProcessHandlers } from './processes';
+import { logger, socket, readlineInterface } from './app';
+import * as readline from 'readline';
+import winston from "winston";
+
 
 // Mocking dependencies
-jest.mock('readline');
+jest.mock('readline',() => ({ createInterface: jest.fn(() => jest.mocked<readline.Interface>) }));
 jest.mock('dotenv/config');
-jest.mock('socket.io-client');
-jest.mock('../src/logger');
-jest.mock('../src/sockets');
-jest.mock('../src/processes');
+jest.mock('socket.io-client', () => ({ io: jest.fn(() => jest.mocked<object>) }));
+jest.mock('./logger', () => ({ createLogger: jest.fn(() => jest.mocked<winston.Logger>) }));
+jest.mock('./sockets', () => ({ initializeSocket: jest.fn() }));
+jest.mock('./processes', () => ({ initializeProcessHandlers: jest.fn() }));
+
+//const mockSocketIoClient = io as jest.Mocked<typeof io>;
 
 describe('App Initialization', () => {
-  beforeAll(() => {
-    (io as jest.Mock).mockReturnValue({ on: jest.fn(), emit: jest.fn() });
-  });
 
   it('should create a logger', () => {
     expect(createLogger).toHaveBeenCalled();
